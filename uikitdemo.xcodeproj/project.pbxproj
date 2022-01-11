@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD3E8CA5278CC70900D5EDE2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E8CA4278CC70900D5EDE2 /* CollectionViewCell.swift */; };
+		AD3E8CA7278E1B1500D5EDE2 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E8CA6278E1B1500D5EDE2 /* MovieModel.swift */; };
 		ADB8924327750487009264ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB8924227750487009264ED /* AppDelegate.swift */; };
 		ADB8924527750487009264ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB8924427750487009264ED /* SceneDelegate.swift */; };
 		ADB8924727750487009264ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB8924627750487009264ED /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		AD3E8CA4278CC70900D5EDE2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		AD3E8CA6278E1B1500D5EDE2 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		ADB8923F27750487009264ED /* uikitdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uikitdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB8924227750487009264ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB8924427750487009264ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB8924227750487009264ED /* AppDelegate.swift */,
+				AD3E8CA6278E1B1500D5EDE2 /* MovieModel.swift */,
 				ADB8924427750487009264ED /* SceneDelegate.swift */,
 				ADB8924627750487009264ED /* ViewController.swift */,
 				ADB8924827750487009264ED /* Main.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				ADB8924727750487009264ED /* ViewController.swift in Sources */,
 				ADB8924327750487009264ED /* AppDelegate.swift in Sources */,
+				AD3E8CA7278E1B1500D5EDE2 /* MovieModel.swift in Sources */,
 				AD3E8CA5278CC70900D5EDE2 /* CollectionViewCell.swift in Sources */,
 				ADB8924527750487009264ED /* SceneDelegate.swift in Sources */,
 			);

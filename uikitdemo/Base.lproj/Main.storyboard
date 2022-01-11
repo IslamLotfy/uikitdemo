@@ -17,22 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="W4c-zB-e8h">
-                            <size key="itemSize" width="360" height="300"/>
-                            <size key="estimatedItemSize" width="360" height="300"/>
+                            <size key="itemSize" width="400" height="300"/>
+                            <size key="estimatedItemSize" width="400" height="300"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" translatesAutoresizingMaskIntoConstraints="NO" id="AgK-Hc-Z2L" customClass="CollectionViewCell" customModule="uikitdemo" customModuleProvider="target">
-                                <rect key="frame" x="27" y="0.0" width="360" height="300"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Cell" translatesAutoresizingMaskIntoConstraints="NO" id="AgK-Hc-Z2L" customClass="CollectionViewCell" customModule="uikitdemo" customModuleProvider="target">
+                                <rect key="frame" x="7" y="0.0" width="400" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CdO-8P-ejv">
-                                    <rect key="frame" x="0.0" y="0.0" width="360" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-JC-VdP">
-                                            <rect key="frame" x="12" y="0.0" width="336" height="300"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-JC-VdP">
+                                            <rect key="frame" x="12" y="0.0" width="376" height="300"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -42,7 +42,7 @@
                                         <constraint firstItem="4Ju-JC-VdP" firstAttribute="leading" secondItem="CdO-8P-ejv" secondAttribute="leading" constant="12" id="woS-gu-zAc"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="360" height="300"/>
+                                <size key="customSize" width="400" height="300"/>
                                 <connections>
                                     <outlet property="moviePoster" destination="4Ju-JC-VdP" id="8Un-dL-DQR"/>
                                 </connections>
