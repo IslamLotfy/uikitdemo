@@ -1,55 +1,90 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
+/*
+Copyright (c) 2022 Swift Models Generated from JSON powered by http://www.json4swift.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar
+
+*/
 
 import Foundation
-
-// MARK: - Welcome
-struct Response: Codable {
-    let page: Int
-    let results: [MovieModel]
-    let totalPages, totalResults: Int
-
-    enum CodingKeys: String, CodingKey {
-        case page, results
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-}
-
-// MARK: - Result
-struct MovieModel: Codable {
-    let adult: Bool
-    let backdropPath: String
-    let genreIDS: [Int]
-    let id: Int
-    let originalLanguage: OriginalLanguage
-    let originalTitle, overview: String
-    let popularity: Double
-    let posterPath, releaseDate, title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+struct Json4Swift_Base : Codable {
+    let page : Int?
+    let results : [Results]?
+    let total_pages : Int?
+    let total_results : Int?
 
     enum CodingKeys: String, CodingKey {
-        case adult
-        case backdropPath = "backdrop_path"
-        case genreIDS = "genre_ids"
-        case id
-        case originalLanguage = "original_language"
-        case originalTitle = "original_title"
-        case overview, popularity
-        case posterPath = "poster_path"
-        case releaseDate = "release_date"
-        case title, video
-        case voteAverage = "vote_average"
-        case voteCount = "vote_count"
-    }
-}
 
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case hi = "hi"
-    case ru = "ru"
+        case page = "page"
+        case results = "results"
+        case total_pages = "total_pages"
+        case total_results = "total_results"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        page = try values.decodeIfPresent(Int.self, forKey: .page)
+        results = try values.decodeIfPresent([Results].self, forKey: .results)
+        total_pages = try values.decodeIfPresent(Int.self, forKey: .total_pages)
+        total_results = try values.decodeIfPresent(Int.self, forKey: .total_results)
+    }
+
+}
+struct Results : Codable {
+    let adult : Bool?
+    let backdrop_path : String?
+    let genre_ids : [Int]?
+    let id : Int?
+    let original_language : String?
+    let original_title : String?
+    let overview : String?
+    let popularity : Double?
+    let poster_path : String?
+    let release_date : String?
+    let title : String?
+    let video : Bool?
+    let vote_average : Double?
+    let vote_count : Int?
+
+    enum CodingKeys: String, CodingKey {
+
+        case adult = "adult"
+        case backdrop_path = "backdrop_path"
+        case genre_ids = "genre_ids"
+        case id = "id"
+        case original_language = "original_language"
+        case original_title = "original_title"
+        case overview = "overview"
+        case popularity = "popularity"
+        case poster_path = "poster_path"
+        case release_date = "release_date"
+        case title = "title"
+        case video = "video"
+        case vote_average = "vote_average"
+        case vote_count = "vote_count"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        adult = try values.decodeIfPresent(Bool.self, forKey: .adult)
+        backdrop_path = try values.decodeIfPresent(String.self, forKey: .backdrop_path)
+        genre_ids = try values.decodeIfPresent([Int].self, forKey: .genre_ids)
+        id = try values.decodeIfPresent(Int.self, forKey: .id)
+        original_language = try values.decodeIfPresent(String.self, forKey: .original_language)
+        original_title = try values.decodeIfPresent(String.self, forKey: .original_title)
+        overview = try values.decodeIfPresent(String.self, forKey: .overview)
+        popularity = try values.decodeIfPresent(Double.self, forKey: .popularity)
+        poster_path = try values.decodeIfPresent(String.self, forKey: .poster_path)
+        release_date = try values.decodeIfPresent(String.self, forKey: .release_date)
+        title = try values.decodeIfPresent(String.self, forKey: .title)
+        video = try values.decodeIfPresent(Bool.self, forKey: .video)
+        vote_average = try values.decodeIfPresent(Double.self, forKey: .vote_average)
+        vote_count = try values.decodeIfPresent(Int.self, forKey: .vote_count)
+    }
+
 }

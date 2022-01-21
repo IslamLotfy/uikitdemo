@@ -11,10 +11,10 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var moviePoster: UIImageView!
     func configure(moviePosterPath:String){
-        let url = URL(string: moviePosterPath)
-
+        let url = URL(string:  "https://image.tmdb.org/t/p/w500/\(moviePosterPath)")
+        print("https://image.tmdb.org/t/p/w500/\(moviePosterPath)")
         DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
                 self.moviePoster.image = UIImage(data: data!)
             }
