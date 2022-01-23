@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,6 +24,10 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="xTb-5i-GPR">
+                            <rect key="frame" x="0.0" y="-44" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="Cell" translatesAutoresizingMaskIntoConstraints="NO" id="AgK-Hc-Z2L" customClass="CollectionViewCell" customModule="uikitdemo" customModuleProvider="target">
                                 <rect key="frame" x="7" y="0.0" width="400" height="300"/>
@@ -34,9 +39,18 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-JC-VdP">
                                             <rect key="frame" x="12" y="0.0" width="376" height="300"/>
                                         </imageView>
+                                        <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUc-Ok-znc">
+                                            <rect key="frame" x="18" y="258" width="32" height="34"/>
+                                            <color key="backgroundColor" red="0.73029569250000004" green="0.49771471569999998" blue="0.84258943799999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="tintColor" name="AccentColor"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="4Ju-JC-VdP" firstAttribute="top" secondItem="CdO-8P-ejv" secondAttribute="top" id="Cvz-6e-uAQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="HUc-Ok-znc" secondAttribute="bottom" constant="8" id="Jwi-62-6NT"/>
+                                        <constraint firstItem="HUc-Ok-znc" firstAttribute="leading" secondItem="CdO-8P-ejv" secondAttribute="leading" constant="18" id="Kv8-6U-cg6"/>
                                         <constraint firstAttribute="bottom" secondItem="4Ju-JC-VdP" secondAttribute="bottom" id="QO7-ry-m16"/>
                                         <constraint firstAttribute="trailing" secondItem="4Ju-JC-VdP" secondAttribute="trailing" constant="12" id="QoO-Gg-ohZ"/>
                                         <constraint firstItem="4Ju-JC-VdP" firstAttribute="leading" secondItem="CdO-8P-ejv" secondAttribute="leading" constant="12" id="woS-gu-zAc"/>
@@ -44,6 +58,7 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="400" height="300"/>
                                 <connections>
+                                    <outlet property="movieNameTV" destination="HUc-Ok-znc" id="l66-gd-lcD"/>
                                     <outlet property="moviePoster" destination="4Ju-JC-VdP" id="8Un-dL-DQR"/>
                                 </connections>
                             </collectionViewCell>
@@ -53,6 +68,9 @@
                             <outlet property="delegate" destination="lcC-4T-ejh" id="xD1-5b-2bq"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="LoadingIndicator" destination="xTb-5i-GPR" id="B1w-9X-gya"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWg-PD-mDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,6 +78,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

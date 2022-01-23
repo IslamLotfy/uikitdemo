@@ -9,14 +9,24 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var movieNameTV: UITextField!
     @IBOutlet weak var moviePoster: UIImageView!
-    func configure(moviePosterPath:String){
-        let url = URL(string:  "https://image.tmdb.org/t/p/w500/\(moviePosterPath)")
-        print("https://image.tmdb.org/t/p/w500/\(moviePosterPath)")
+    func configure(movieModel: Results){
+        let path = movieModel.backdrop_path
+        let url = URL(string:  "https://image.tmdb.org/t/p/w500/\(path ?? "")")
         DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                self.moviePoster.image = UIImage(data: data!)
+            if (url != nil) {
+                let data = try? Data(contentsOf: url!)
+                if(data != nil){
+                    DispatchQueue.main.async {
+                        self.moviePoster.image = UIImage(data: data!)
+                        self.movieNameTV.text = movieModel.title
+                    }
+                } else {
+                    self.moviePoster.image = UIImage(systemName: "movies")
+                }
+            }else {
+                
             }
         }
     }
