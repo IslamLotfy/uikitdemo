@@ -35,7 +35,7 @@ class ViewController: UICollectionViewController {
         pageNumber += 1
         url = "https://api.themoviedb.org/3/movie/top_rated?api_key=e20080ab8b395f936423b819c9b6b689&language=en-US&page=\(pageNumber)"
         print(url)
-        self.loadData(completion: { [weak self] (result, error) in
+        self.loadData(endPoint: url, completion: { [weak self] (result, error) in
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -62,16 +62,23 @@ class ViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = UICollectionViewCell()
         if let movieCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CollectionViewCell{
-            if(indexPath.row == dataSource.count-3){
-                loadMoreData()
-            }
+            print(indexPath.row)
+            print(dataSource[indexPath.row])
+
             movieCell.configure(movieModel: dataSource[indexPath.row])
+
             cell = movieCell
         }
         return cell
     }
-    func loadData(completion: @escaping (_ data: Json4Swift_Base?, _ error: Error?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=e20080ab8b395f936423b819c9b6b689&language=en-US")!
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if(indexPath.row == dataSource.count-3){
+            loadMoreData()
+        }
+    }
+    func loadData(endPoint: String,completion: @escaping (_ data: Json4Swift_Base?, _ error: Error?) -> Void) {
+        let url = URL(string: endPoint)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             if let error = error {
                 completion(nil, error)
